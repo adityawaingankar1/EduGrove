@@ -1,1 +1,1 @@
-# EduGrove
+# EduGrove-Student Resource Hub
