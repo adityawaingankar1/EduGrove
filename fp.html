@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="fp.css">
+    <script type="module" src="fp.js" defer></script>
+</head>
+<body>
+    <!-- Sticky Navigation Bar -->
+    <header class="nav">
+        <img src="IMG_6876.JPG" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/index.html">Home</a></li>
+                <li><a href="About/about.html" onclick="checkLogin(event, 'About/about.html')">About</a></li>
+                <li><a href="Courses/courses.html" onclick="checkLogin(event, 'Courses/courses.html')">Courses</a></li>
+                <li><a href="Contact form/contact.html" onclick="checkLogin(event, 'Contact form/contact.html')">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="login" onclick="location.href='http://127.0.0.1:5500/login/login.html'">Login</button>
+            <button class="signup" onclick="location.href='http://127.0.0.1:5500/Signup/signup.html'">Sign Up</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="form-box">
+            <h2>Forgot Password</h2>
+            <form>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder=" " required>
+                    <label for="email">Email</label>
+                </div>
+                <button type="submit">Send Reset Email</button>
+            </form>
+
+            <a href="/login/login.html" class="back-link">Back to Login</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Explore Page. All Rights Reserved.</p>
+    </footer>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCE9rLPJb6yquVNcLqVoHJAiPXk-33eeFo",
+            authDomain: "login-example-abf20.firebaseapp.com",
+            projectId: "login-example-abf20",
+            storageBucket: "login-example-abf20.firebasestorage.app",
+            messagingSenderId: "620711411544",
+            appId: "1:620711411544:web:2c042f20fb6e99f7fb2f2d",
+            measurementId: "G-8YF8GX9H0G"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // User is signed in, show all content
+                document.querySelectorAll('.protected-content').forEach(el => {
+                    el.style.display = 'block';
+                });
+                document.getElementById('login-message').style.display = 'none';
+            } else {
+                // User is not signed in, hide protected content
+                document.querySelectorAll('.protected-content').forEach(el => {
+                    el.style.display = 'none';
+                });
+                document.getElementById('login-message').style.display = 'block';
+            }
+        });
+    </script>
+    <script>
+        // Make sure Firebase is initialized somewhere before this
+
+        function checkLogin(event, targetUrl) {
+            event.preventDefault();
+
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    // User is signed in, allow redirection
+                    window.location.href = targetUrl;
+                } else {
+                    // User not signed in, redirect to login page
+                    alert("Please login to continue.");
+                    window.location.href = "login/login.html"; // Adjust the path if needed
+                }
+            });
+        }
+    </script>
+    
+</body>
+</html>
