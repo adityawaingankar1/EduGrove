@@ -1,0 +1,304 @@
+/* ----------------------------
+   RESET & BASE STYLES
+---------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ----------------------------
+   NAVIGATION BAR
+---------------------------- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  height: 40px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav ul li a.active {
+  border-bottom: 3px solid #ff595e;
+  padding-bottom: 5px;
+}
+
+nav ul li a:hover {
+  color: #ff595e;
+}
+
+/* ----------------------------
+   AUTH BUTTONS (Login / Signup)
+---------------------------- */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-buttons .login,
+.auth-buttons .signup {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.auth-buttons .login {
+  background-color: #ff595e;
+  color: white;
+}
+
+.auth-buttons .signup {
+  background-color: #fff;
+  border: 2px solid #ff595e;
+  color: #ff595e;
+}
+
+/* ----------------------------
+   PROFILE ICON & DROPDOWN
+---------------------------- */
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #ff595e;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 100;
+  min-width: 240px;
+}
+
+.profile-icon.large {
+  width: 60px;
+  height: 60px;
+  font-size: 22px;
+  margin: 0 auto 10px;
+}
+
+.dropdown-info p {
+  margin: 4px 0;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+#dropdown-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#dropdown-email {
+  font-size: 14px;
+  color: #555;
+}
+
+#signout-btn {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: #ff595e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ----------------------------
+   HERO SECTION
+---------------------------- */
+.hero {
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero .btn-lg {
+  padding: 10px 30px;
+}
+
+/* ----------------------------
+   ABOUT US SECTION
+---------------------------- */
+#about-us {
+  padding-top: 60px;
+}
+
+#about-us img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* ----------------------------
+   FEEDBACK SECTION
+---------------------------- */
+/* Feedback Container Styling */
+#feedback-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+/* Feedback Card Styling */
+#feedback-container .card {
+  border-radius: 1rem;
+  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  transition: box-shadow 0.3s ease;
+}
+
+#feedback-container .card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Feedback Text */
+#feedback-container .card p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Feedback Timestamp */
+#feedback-container .card small {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* Like/Dislike Buttons */
+#feedback-container .btn {
+  border-radius: 20px;
+  font-size: 0.9rem;
+  padding: 4px 12px;
+  transition: all 0.2s ease;
+}
+
+#feedback-container .btn:hover {
+  transform: scale(1.05);
+}
+
+/* Count Styling */
+#feedback-container .like-count,
+#feedback-container .dislike-count {
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+
+
+/* ----------------------------
+   FOOTER
+---------------------------- */
+footer {
+  text-align: center;
+  background-color: #ff595e;
+  color: white;
+  padding: 20px 0;
+  width: 100%;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: auto;
+}
+
+/* ----------------------------
+   RESPONSIVE DESIGN
+---------------------------- */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  #about-us {
+    padding: 30px 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-dropdown {
+    right: 10px;
+    left: 10px;
+    width: auto;
+  }
+
+  .profile-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .profile-icon.large {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+}

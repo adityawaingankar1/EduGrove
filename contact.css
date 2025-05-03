@@ -1,0 +1,234 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Sticky Navigation Bar */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  height: 40px;
+  
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+nav ul li a.active {
+  border-bottom: 3px solid #ff595e;
+  padding-bottom: 5px;
+}
+
+/* Profile icon */
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #ff595e;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  /* Dropdown box */
+  .profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 100;
+    min-width: 240px;
+  }
+  
+  .profile-icon.large {
+    width: 60px;
+    height: 60px;
+    font-size: 22px;
+    margin: 0 auto 10px;
+  }
+  
+  .dropdown-info p {
+    margin: 4px 0;
+    font-size: 14px;
+    word-wrap: break-word;
+  }
+  
+  #dropdown-name {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  #dropdown-email {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  #signout-btn {
+    margin-top: 12px;
+    padding: 8px 16px;
+    background-color: #ff595e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  /* Login/Signup Button Styles */
+  .auth-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .auth-buttons .login,
+  .auth-buttons .signup {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .auth-buttons .login {
+    background-color: #ff595e;
+    color: white;
+  }
+  
+  .auth-buttons .signup {
+    background-color: #fff;
+    border: 2px solid #ff595e;
+    color: #ff595e;
+  }
+  
+
+
+
+/* General reset */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Flexbox layout for body */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure full height */
+    background-color: #f4f4f4;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ff595e;
+  margin-bottom: 15px;
+}
+
+.email, .linkedin {
+  display: block;
+  margin: 4px 0;
+  text-decoration: none;
+  color: #0d6efd;
+  transition: color 0.3s ease;
+}
+
+.email:hover, .linkedin:hover {
+  color: #084298;
+  text-decoration: underline;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-title {
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #ff595e;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 52px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #about-us {
+        padding: 30px 0;
+    }
+}
